@@ -10822,7 +10822,7 @@ header.masthead .post-heading .meta a {
     padding: 8px 16px;
     border-radius: 20px;
     cursor: pointer;
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
 }
 
 .theme-switch-wrapper:hover {
@@ -10834,7 +10834,7 @@ header.masthead .post-heading .meta a {
 
 [data-theme="dark"] .post-preview > a {
   color: #ffffff !important;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 [data-theme="dark"] .post-preview > a:hover {
@@ -10847,7 +10847,7 @@ header.masthead .post-heading .meta a {
 }
 
 body {
-    transition: background-color 0.5s ease, color 0.5s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 [data-theme="dark"] body {
@@ -10859,3 +10859,40 @@ body {
     background-color: #121212;
 }
 
+
+
+
+[data-theme="dark"] .form-control {
+    background-color: #2d2d2d;
+    border-color: #404040;
+    color: #ffffff;
+}
+
+[data-theme="dark"] .form-control:focus {
+    background-color: #3d3d3d;
+    border-color: #0085A1;
+    color: #ffffff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 133, 161, 0.25);
+}
+
+[data-theme="dark"] .form-control::placeholder {
+    color: #888888;
+}
+
+[data-theme="dark"] .form-floating label {
+    color: #888888;
+}
+
+[data-theme="dark"] .btn-primary {
+    background-color: #0085A1;
+    border-color: #0085A1;
+}
+
+[data-theme="dark"] .btn-primary:hover {
+    background-color: #006d84;
+    border-color: #006d84;
+}
+
+[data-theme="dark"] .form-control::placeholder {
+    opacity: 0;
+}
