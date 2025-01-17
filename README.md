@@ -1,7 +1,5 @@
 # my_first_blog
 
-# My First Blog
-
 This project implements a simple blog application using Flask, a Python web framework.  It leverages several extensions for enhanced functionality and styling:
 
 * **Flask-Bootstrap:** Provides Bootstrap integration for responsive and visually appealing design.
