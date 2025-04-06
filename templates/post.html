@@ -19,7 +19,7 @@
         {% from 'bootstrap5/form.html' import render_form %}
         {% include 'header.html' %}
         <!-- Page Header-->
-        <header class="masthead" style="background-image: url('{{ post.image_url }}')">
+        <header class="masthead" style="background-image: url('{{ post.img_url }}')">
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
@@ -41,11 +41,6 @@
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <p>{{ post["body"] | striptags }}</p>
 
-<!--                        {% if current_user.is_authenticated %}-->
-<!--                        {{ ckeditor.load() }}-->
-<!--                        {{ ckeditor.config(name='comments') }}-->
-<!--                        {% endif %}-->
-
                         {{ ckeditor.load() }}
                         {{ ckeditor.config(name='text') }}
 
@@ -61,14 +56,13 @@
                     {% endif %}
 
                     <div class="comments">
-{% for comment, user in comments %}
-<div class="comment-card mb-3">
-    <strong>{{ user.name }}</strong>
-    <small class="text-muted">{{ comment.date }}</small>
-    <p>{{ comment.text | safe }}</p>
-</div>
-{% endfor %}
-
+                        {% for comment, user in comments %}
+                        <div class="comment-card mb-3">
+                            <strong>{{ user.name }}</strong>
+                            <small class="text-muted">{{ comment.date }}</small>
+                            <p>{{ comment.text | safe }}</p>
+                        </div>
+                        {% endfor %}
                     </div>
 
 

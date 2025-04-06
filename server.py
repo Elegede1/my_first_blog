@@ -36,10 +36,8 @@ app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 Bootstrap5(app)
 
 
-
 class Base(DeclarativeBase):
     pass
-
 
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///posts.db'
@@ -143,7 +141,6 @@ def show_post(post_id):
         .filter(Comment.post_id == post_id)
         .all()
     )
-
     return render_template("post.html", post=requested_post, year=current_year, form=comment_form, comments=comments)
 
 
@@ -197,7 +194,8 @@ def login():
                     error_message = "Incorrect password. Please try again."  # Error message
                     return render_template('login.html', form=login_form, year=current_year, error=error_message)
             else:
-                flash("User does not exist. Please register.")
+                register_link = url_for('register')
+                flash(f"<span style='color:red;'>User does not exist. Please </span><a class='registered-link' href='{register_link}'><span style='color:blue; font-weight:bold;'>register</span></a>")
                 error_message = "User does not exist. Please register."  # Error message
                 return render_template('login.html', form=login_form, year=current_year, error=error_message)
         else:
@@ -205,7 +203,6 @@ def login():
             error_message = "All fields are required."  # Error message
             return render_template('login.html', form=login_form, year=current_year, error=error_message)
     return render_template('login.html', form=login_form, year=current_year)
-
 
 
 @app.route('/about')
@@ -239,8 +236,6 @@ def contact():
         else:
             error_message = "All fields are required."  # Error message
             return render_template('contact.html', year=current_year, msg_sent=False, error=error_message)
-
-
     return render_template('contact.html', year=current_year, msg_sent=False)
 
 
@@ -290,7 +285,6 @@ def edit_post(post_id):
         post.subtitle = form.subtitle.data
         post.body = form.body.data
         post.img_url = form.img_url.data
-        post.author = form.author.data
         db.session.commit()
         return redirect(url_for('index'))
     return render_template('edit_post.html', form=form, post=post, year=current_year)

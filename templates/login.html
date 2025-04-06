@@ -34,11 +34,11 @@
             </div>
         </header>
 
-            {% with messages = get_flashed_messages() %}
+    {% with messages = get_flashed_messages() %}
       {% if messages %}
           {% for message in messages %}
             <div class="alert alert-warning">
-              {{ message }}
+              {{ message | safe }}
             </div>
           {% endfor %}
         {% endif %}

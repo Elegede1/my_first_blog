@@ -11,6 +11,7 @@ class Addblog(FlaskForm):
     img_url = StringField("Blog Image URL", validators=[DataRequired(), URL()])
     body = CKEditorField("Blog Content", validators=[DataRequired()])
     submit = SubmitField("Submit Post")
+    # author = StringField("Author", validators=[DataRequired()])
 
 class CommentForm(FlaskForm):
     body = CKEditorField("Comment", validators=[DataRequired()])

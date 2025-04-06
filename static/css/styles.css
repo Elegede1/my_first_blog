@@ -10896,3 +10896,18 @@ body {
 [data-theme="dark"] .form-control::placeholder {
     opacity: 0;
 }
+
+
+
+
+.registered-link {
+    color: blue;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.registered-link:hover {
+    color: darkblue;
+    text-decoration: underline;
+}
