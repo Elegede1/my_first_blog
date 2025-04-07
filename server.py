@@ -11,7 +11,6 @@ from flask_ckeditor import CKEditor, CKEditorField
 # from flask_gravatar import Gravatar
 from datetime import date
 import os
-from dotenv import load_dotenv
 from flask_login import UserMixin, login_user, LoginManager, login_required, current_user, logout_user
 from werkzeug.security import generate_password_hash, check_password_hash
 from forms import RegisterForm, LoginForm, Addblog, CommentForm
@@ -19,7 +18,6 @@ from functools import wraps
 
 
 
-load_dotenv()
 # Load environment variables
 my_email = os.getenv('my_email')
 my_password = os.getenv('password')
