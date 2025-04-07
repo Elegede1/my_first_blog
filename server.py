@@ -19,8 +19,8 @@ from functools import wraps
 
 
 # Load environment variables
-my_email = os.getenv('my_email')
-my_password = os.getenv('password')
+my_email = os.environ.get('email')
+my_password = os.environ.get('password')
 
 
 app = Flask(__name__)
@@ -30,7 +30,7 @@ app.config['CKEDITOR_CONFIG'] = {'toolbar': 'Full',
 login_manager = LoginManager()
 login_manager.init_app(app)
 csrf = CSRFProtect(app)
-app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 Bootstrap5(app)
 
 
